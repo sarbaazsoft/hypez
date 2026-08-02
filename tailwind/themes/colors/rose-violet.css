@@ -1,0 +1,27 @@
+@theme {
+
+  /* --- Static Brand Color Tokens --- */
+  --color-primary: rgb(244, 67, 54);
+  --color-primary-alt: rgb(252, 81, 81);
+  --color-text-muted: rgb(108, 117, 125);
+  --color-text-inverted: rgb(255, 255, 255);
+
+/* --- Base Page Background Tokens --- */
+--color-light-bg: rgb(245, 232, 234);      /* Blush */
+--color-dark-bg: rgb(28, 18, 26);          /* Plum */
+
+/* --- Base Text Colors --- */
+--color-text-base-dark: rgb(238, 226, 234);
+--color-text-base-alt-dark: rgb(172, 150, 166);
+
+/* --- Elevated Card Backgrounds --- */
+--color-card-bg-light: rgb(255, 255, 255);
+--color-card-bg-dark: rgb(40, 28, 38);
+
+/* --- Dynamic Utility Mapping (Default: Light Mode) --- */
+--color-text-base: rgb(32, 22, 28);
+--color-text-base-alt: rgb(108, 88, 100);
+--color-body: var(--color-light-bg);
+--color-body-dark: var(--color-dark-bg);
+--color-card-bg: var(--color-card-bg-light);
+}

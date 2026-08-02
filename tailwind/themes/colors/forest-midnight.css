@@ -1,0 +1,27 @@
+@theme {
+
+  /* --- Static Brand Color Tokens --- */
+  --color-primary: rgb(244, 67, 54);
+  --color-primary-alt: rgb(252, 81, 81);
+  --color-text-muted: rgb(108, 117, 125);
+  --color-text-inverted: rgb(255, 255, 255);
+/* --- Base Page Background Tokens --- */
+--color-light-bg: rgb(230, 236, 240);      /* Frost */
+--color-dark-bg: rgb(16, 20, 28);          /* Midnight */
+
+/* --- Base Text Colors --- */
+--color-text-base-dark: rgb(224, 230, 236);
+--color-text-base-alt-dark: rgb(150, 162, 176);
+
+/* --- Elevated Card Backgrounds --- */
+--color-card-bg-light: rgb(255, 255, 255);
+--color-card-bg-dark: rgb(26, 32, 44);
+
+/* --- Dynamic Utility Mapping (Default: Light Mode) --- */
+--color-text-base: rgb(20, 26, 34);
+--color-text-base-alt: rgb(90, 100, 112);
+--color-body: var(--color-light-bg);
+--color-body-dark: var(--color-dark-bg);
+--color-card-bg: var(--color-card-bg-light);
+
+}

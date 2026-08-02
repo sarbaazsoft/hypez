@@ -1,0 +1,217 @@
+
+/* Google Fonts Import (Caveat, Courgette, Indie Flower, Sacramento) */
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Courgette&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap");
+/* ==========================================
+   1. EXTERNAL IMPORTS & CONFIGURATION
+   ========================================== */
+
+/* Core Tailwind CSS v4 framework import */
+@import "tailwindcss";
+
+/* File paths for Tailwind to scan for dynamic class usage */
+@source "../src/**/*.js";
+
+/* Custom dark mode variant selector targeting the .dark class */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ==========================================
+   2. TAILWIND V4 THEME CONFIGURATION
+   ========================================== */
+@theme {
+
+
+  /* --- Custom Font Families --- */
+  --font-hypez-1: "Roboto", ui-sans-serif, system-ui, sans-serif;
+  --font-hypez-2: "Courgette", cursive;
+  --font-hypez-hand: "Caveat", cursive;
+
+  /* --- Static Brand Color Tokens --- */
+  --color-primary: rgb(244 67 54);
+  --color-primary-alt: rgb(252 81 81);
+  --color-text-muted: rgb(108 117 125);
+  --color-text-inverted: rgb(255 255 255);
+
+  /* --- Base Page Background Tokens --- */
+  --color-light-bg: rgb(236 240 246);          /* pale ice blue */
+  --color-dark-bg: rgb(8 14 26);               /* near-black navy */
+
+  /* --- Base Text Colors --- */
+  --color-text-base-dark: rgb(224 232 244);
+  --color-text-base-alt-dark: rgb(148 168 200);
+
+  /* --- Elevated Card Backgrounds --- */
+  --color-card-bg-light: rgb(250 252 255);
+  --color-card-bg-dark: rgb(26 38 58);
+
+  /* --- Glass-specific tokens --- */
+  --color-glass-tint: rgb(56 92 148);
+  --color-glass-edge: rgb(120 176 244);
+  --color-glass-sheen: rgb(210 230 255);
+  --color-glass-glow: rgb(80 140 255);
+
+  /* --- Dynamic Utility Mapping (Default: Light Mode) --- */
+  --color-text-base: rgb(20 28 40);
+  --color-text-base-alt: rgb(80 96 120);
+  --color-body: var(--color-light-bg);
+  --color-body-dark: var(--color-dark-bg);
+  --color-card-bg: var(--color-card-bg-light);
+
+  /* --- Default Light Mode Glass Custom Properties --- */
+  --glass-bg: var(--color-card-bg-light);
+  --glass-border: transparent;
+  --glass-backdrop: none;
+  --glass-shadow: var(--shadow-elevation-1, 0 4px 6px -1px rgba(0, 0, 0, 0.1));
+  --glass-sheen: transparent;
+  --glass-glow: transparent;
+}
+
+/* ==========================================
+   3. BASE STYLES & OVERRIDES
+   ========================================== */
+@layer base {
+
+  /* --- Dark Mode Variables Overrides --- */
+  .dark {
+    --color-text-base: var(--color-text-base-dark);
+    --color-text-base-alt: var(--color-text-base-alt-dark);
+    --color-body: var(--color-dark-bg);
+    --color-card-bg: var(--color-card-bg-dark);
+
+    /* Dynamic Translucent Glass Mapping in Dark Mode */
+    --glass-bg: rgb(from var(--color-glass-tint) r g b / 0.2);
+    --glass-border: rgb(from var(--color-glass-edge) r g b / 0.3);
+    --glass-backdrop: blur(24px) saturate(200%);
+    --glass-shadow: 0 8px 32px rgba(8, 14, 26, 0.5), 
+                    0 0 0 1px rgb(from var(--color-glass-glow) r g b / 0.05), 
+                    inset 0 1px 0 0 rgb(from var(--color-glass-sheen) r g b / 0.15);
+
+    --glass-sheen: linear-gradient(
+      135deg,
+      rgb(from var(--color-glass-sheen) r g b / 0.16) 0%,
+      rgb(from var(--color-glass-sheen) r g b / 0.04) 30%,
+      transparent 55%
+    );
+
+    --glass-glow: radial-gradient(
+      ellipse at top,
+      rgb(from var(--color-glass-glow) r g b / 0.12) 0%,
+      transparent 70%
+    );
+
+  }
+
+  /* --- Global Configurations --- */
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply font-hypez-1 font-normal bg-body text-text-base transition-colors duration-300;
+  }
+
+
+  main{
+    @apply px-4 md:px-0 flex-1 self-stretch mt-1;
+  }
+}
+
+/* ==========================================
+   4. TAILWIND V4 UTILITY DEFINITIONS
+   ========================================== */
+@utility glass-surface {
+  position: relative;
+  background-color: var(--glass-bg);
+  border-color: var(--glass-border);
+  backdrop-filter: var(--glass-backdrop);
+  -webkit-backdrop-filter: var(--glass-backdrop);
+  box-shadow: var(--glass-shadow);
+
+  &::before {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    background: var(--glass-sheen);
+  }
+
+  &::after {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: -1px;
+    z-index: -10;
+    border-radius: inherit;
+    background: var(--glass-glow);
+  }
+}
+
+/* ==========================================
+   5. BASE COMPONENT CLASSES
+   ========================================== */
+@layer base {
+
+  .navbar-fixed {
+    @apply glass-surface font-hypez-2 border-b overflow-visible dark:border-indigo-500/20 sticky top-0 z-40;
+  }
+
+  .wrapper {
+    @apply flex flex-col justify-between min-h-screen max-w-5xl text-left mx-auto gap-1;
+  }
+main {
+    @apply px-4 md:px-0 flex-1 self-stretch mt-1;
+
+  }
+
+  .nav-link {
+    @apply flex hover:text-white p-2 items-center gap-4 w-full 
+           hover:bg-linear-to-l from-primary to-primary-alt
+           md:hover:bg-none md:hover:text-text-base-alt rounded-md md:shadow-none duration-200;
+  }
+
+  .nav-link-text {
+    @apply relative text-xs inline-block md:after:content-[''] md:after:absolute md:after:left-0
+           md:after:-bottom-0.5 md:after:h-0.5 md:after:w-0 md:after:bg-primary
+           md:after:duration-1000 md:group-hover:after:w-full md:group-focus:after:w-full;
+  }
+
+  .hero-bg {
+    @apply relative w-full overflow-hidden;
+  }
+
+  .hero-bg::before {
+    content: "";
+    @apply absolute inset-0 bg-cover bg-center -z-10 blur-xl scale-110 bg-[url(../images/hypez.jpg)];
+  }
+/* --- Mobile Drawer (Glass in Light, Solid Card BG in Dark) --- */
+  #nav-menu {
+    @apply fixed left-0 top-12 w-[80vw] h-[calc(100vh-3rem)]           
+           p-6 z-50 shadow-2xl
+           transition-all duration-300 ease-in-out -translate-x-full opacity-0
+           md:static md:translate-x-0 md:opacity-100 md:w-auto md:h-auto md:p-0 
+           md:bg-transparent md:dark:bg-transparent md:border-none md:shadow-none 
+           md:flex md:flex-row md:items-center;
+  }
+
+  /* Active Drawer Class */
+  #nav-menu.menu-open {
+    @apply dark:bg-dark-bg bg-white translate-x-0 opacity-100;
+  }
+  .swiper-slide {
+    @apply w-48 text-lg bg-gray-900 justify-center items-center;
+  }
+
+  .swiper-slide img {
+    @apply h-48 w-full object-cover;
+  }
+
+  .card-hypez-1 {
+    @apply glass-surface rounded-lg border-b overflow-hidden;
+  }
+
+  #nextBtn.swiper-button-disabled,
+  #prevBtn.swiper-button-disabled {
+    opacity: 0.3;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+}

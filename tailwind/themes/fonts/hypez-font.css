@@ -1,0 +1,10 @@
+/* 1. Google Font import — MUST be first, before any other rule */
+@import url('https://fonts.googleapis.com/css2?family=Libertinus+Serif:wght@400;700&family=Courgette&family=Poppins:wght@300;400;500;600;700&family=Caveat:wght@400;600&display=swap');
+
+/* 2. Map the imported fonts to your Tailwind tokens */
+@theme {
+  --font-hypez-1: "Libertinus Serif", serif;
+  --font-hypez-2: "Courgette", cursive;
+  --font-hypez-3: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-hypez-hand: "Caveat", cursive;
+}

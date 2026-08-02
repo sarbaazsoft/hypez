@@ -1,0 +1,47 @@
+@theme {
+
+/* --- Custom Font Families --- */
+    --font-hypez-1: "Libertinus Serif", serif;
+    --font-hypez-2: "Courgette", cursive;
+    --font-hypez-3: "Roboto", ui-sans-serif, system-ui, sans-serif;
+    --font-hypez-hand: "Caveat", cursive;
+
+    /* --- Static Brand Color Tokens --- */
+    --color-primary: rgb(244 67 54);
+    --color-primary-alt: rgb(252 81 81);
+    --color-text-muted: rgb(108 117 125);
+    --color-text-inverted: rgb(255 255 255);
+
+    /* --- Base Page Background Tokens --- */
+    --color-light-bg: rgb(236 240 246);          /* pale ice blue */
+    --color-dark-bg: rgb(8 14 26);               /* near-black navy, deep enough for glass to pop */
+
+    /* --- Base Text Colors --- */
+    --color-text-base-dark: rgb(224 232 244);
+    --color-text-base-alt-dark: rgb(148 168 200);
+
+    /* --- Elevated Card Backgrounds --- */
+    --color-card-bg-light: rgb(250 252 255);
+    --color-card-bg-dark: rgb(26 38 58);         /* steel-blue panel, lifted off dark-bg */
+
+    /* --- Glass-specific tokens --- */
+    --color-glass-tint: rgb(56 92 148);          /* saturated blue fill for the glass */
+    --color-glass-edge: rgb(120 176 244);        /* bright azure rim-light */
+    --color-glass-sheen: rgb(210 230 255);       /* cool white-blue sheen */
+    --color-glass-glow: rgb(80 140 255);         /* accent glow behind the card */
+
+    /* --- Dynamic Utility Mapping (Default: Light Mode) --- */
+    --color-text-base: rgb(20 28 40);
+    --color-text-base-alt: rgb(80 96 120);
+    --color-body: var(--color-light-bg);
+    --color-body-dark: var(--color-dark-bg);
+    --color-card-bg: var(--color-card-bg-light);
+
+    /* --- Default Light Mode Glass Variables --- */
+    --glass-bg: var(--color-card-bg-light);
+    --glass-border: transparent;
+    --glass-backdrop: none;
+    --glass-shadow: var(--shadow-elevation-1, 0 4px 6px -1px rgba(0, 0, 0, 0.1));
+    --glass-sheen: transparent;
+    --glass-glow: transparent;
+}

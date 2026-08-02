@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Navbar & Glass Cards - Tailwind v4</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <!-- Swiper CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css"
+  />
+</head>
+<body>
+
+  <div class="wrapper">
+    <header>
+          <nav class="navbar-fixed">
+  <div class="max-w-5xl mx-auto px-4 flex justify-between items-center h-12 leading-12">
+    <!-- hamburger (mobile only) -->
+    <button id="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu"
+      class="md:hidden text-xl leading-none transition duration-500 cursor-pointer">
+      <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 -960 960 960"
+        width="16"
+        height="20"
+        fill="currentColor">
+        <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+    </button>
+
+
+    <div class="select-none grid grid-cols-[auto_auto] grid-rows-2 items-center gap-x-1">
+
+      <span class="text-xs uppercase font-hypez-2 font-bold col-start-1 row-start-1 tracking-widest leading-none">
+        Hype
+      </span>
+
+      <span class="text-xs uppercase font-hypez-2 font-bold col-start-1 row-start-2 tracking-widest leading-none">
+        lyari
+      </span>
+
+      <span class="uppercase font-hypez-hand font-bold text-2xl col-start-2 row-start-1 row-span-2 text-primary leading-none
+           flex items-center justify-center flex-1 self-stretch h-full">
+        z
+      </span>
+
+    </div>
+
+
+    <ul id="nav-menu"
+      >
+      <li class="w-full px-5 md:px-0 md:w-auto">
+        <a href="#home" class="group nav-link">
+          <span class="md:hidden inline-block">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z" />
+            </svg>
+          </span>
+          <span class="nav-link-text">Home</span>
+        </a>
+      </li>
+      <li class="w-full px-5 md:px-0 md:w-auto">
+        <a href="#about" class="group nav-link">
+          <span class="md:hidden inline-block">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z" />
+            </svg>
+          </span>
+          <span class="nav-link-text">About</span>
+        </a>
+      </li>
+      <li class="w-full px-5 md:px-0 md:w-auto">
+        <a href="#skills" class="group nav-link">
+          <span class="md:hidden inline-block">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z" />
+              <path d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5L9.5 0zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z" />
+            </svg>
+          </span>
+          <span class="nav-link-text">Skills</span>
+        </a>
+      </li>
+      <li class="w-full px-5 md:px-0 md:w-auto">
+        <a href="#services" class="group nav-link">
+          <span class="md:hidden inline-block">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z" />
+            </svg>
+          </span>
+          <span class="nav-link-text">Services</span>
+        </a>
+      </li>
+      <li class="w-full px-5 md:px-0 md:w-auto">
+        <a href="#portfolio" class="group nav-link">
+          <span class="md:hidden inline-block">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M4.502 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
+              <path d="M14.002 13a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2V5A2 2 0 0 1 2 3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-1.998 2zM14 2H4a1 1 0 0 0-1 1h9.002a2 2 0 0 1 2 2v7A1 1 0 0 0 15 11V3a1 1 0 0 0-1-1zM2.002 4a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1h-10z" />
+            </svg>
+          </span>
+          <span class="nav-link-text">Portfolio</span>
+        </a>
+      </li>
+      <li class="w-full px-5 md:px-0 md:w-auto">
+        <a href="#contact-me" class="group nav-link">
+          <span class="md:hidden inline-block">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
+            </svg>
+          </span>
+          <span class="nav-link-text">Contact</span>
+        </a>
+      </li>
+    </ul>
+
+
+
+    <div class="grid grid-flow-col gap-2">
+      <div class="relative w-5 h-full dropdown">
+        <button
+          class="dropdown-toggle duration-300 link cursor-pointer  "
+          type="button"
+          id="themeIcon"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >  <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-display"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M0 4s0-2 2-2h12s2 0 2 2v6s0 2-2 2h-4c0 .667.083 1.167.25 1.5H11a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1h.75c.167-.333.25-.833.25-1.5H2s-2 0-2-2V4zm1.398-.855a.758.758 0 0 0-.254.302A1.46 1.46 0 0 0 1 4.01V10c0 .325.078.502.145.602.07.105.17.188.302.254a1.464 1.464 0 0 0 .538.143L2.01 11H14c.325 0 .502-.078.602-.145a.758.758 0 0 0 .254-.302 1.464 1.464 0 0 0 .143-.538L15 9.99V4c0-.325-.078-.502-.145-.602a.757.757 0 0 0-.302-.254A1.46 1.46 0 0 0 13.99 3H2c-.325 0-.502.078-.602.145z"
+              />
+            </svg>
+          </button>
+
+        <ul
+          class="absolute  right-0 top-[130%] -translate-y-2 hidden z-50 rounded-lg shadow-lg py-2 dropdown-menu transition-colors duration-300 font-hypez-2 bg-card-bg opacity-100"
+          aria-labelledby="themeIcon"
+        >                 <li>
+            <fieldset>
+              <input
+                type="radio"
+                class="hidden peer"
+                name="theme"
+                id="dark"
+              />
+              <label
+                for="dark"
+                class="flex items-center gap-2  w-full py-2 px-4 duration-300 text-sm whitespace-nowrap cursor-pointer hover:bg-slate-800/20 dark:hover:bg-gray-500/50 peer-checked:bg-gray-500/50 peer-checked:text-white"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-moon-stars-fill"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"
+                  />
+                  <path
+                    d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"
+                  />
+                </svg>
+                <span>Dark</span>
+              </label>
+            </fieldset>
+          </li>
+
+          <li>
+            <fieldset>
+              <input
+                type="radio"
+                class="hidden peer"
+                name="theme"
+                id="light"
+                checked
+              />
+              <label
+                for="light"
+                class="flex items-center gap-2 w-full py-2 px-4 duration-300 text-sm whitespace-nowrap cursor-pointer hover:bg-slate-800/20 dark:hover:bg-gray-500/50 peer-checked:bg-body-dark peer-checked:text-white"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="16"
+                  width="16"
+                  viewBox="0 0 48 48"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M24 31q2.9 0 4.95-2.05Q31 26.9 31 24q0-2.9-2.05-4.95Q26.9 17 24 17q-2.9 0-4.95 2.05Q17 21.1 17 24q0 2.9 2.05 4.95Q21.1 31 24 31Zm0 3q-4.15 0-7.075-2.925T14 24q0-4.15 2.925-7.075T24 14q4.15 0 7.075 2.925T34 24q0 4.15-2.925 7.075T24 34ZM3.5 25.5q-.65 0-1.075-.425Q2 24.65 2 24q0-.65.425-1.075Q2.85 22.5 3.5 22.5h5q.65 0 1.075.425Q10 23.35 10 24q0 .65-.425 1.075-.425.425-1.075.425Zm36 0q-.65 0-1.075-.425Q38 24.65 38 24q0-.65.425-1.075.425-.425 1.075-.425h5q.65 0 1.075.425Q46 23.35 46 24q0 .65-.425 1.075-.425.425-1.075.425ZM24 10q-.65 0-1.075-.425Q22.5 9.15 22.5 8.5v-5q0-.65.425-1.075Q23.35 2 24 2q.65 0 1.075.425.425.425.425 1.075v5q0 .65-.425 1.075Q24.65 10 24 10Zm0 36q-.65 0-1.075-.425-.425-.425-.425-1.075v-5q0-.65.425-1.075Q23.35 38 24 38q.65 0 1.075.425.425.425.425 1.075v5q0 .65-.425 1.075Q24.65 46 24 46ZM12 14.1l-2.85-2.8q-.45-.45-.425-1.075.025-.625.425-1.075.45-.45 1.075-.45t1.075.45L14.1 12q.4.45.4 1.05 0 .6-.4 1-.4.45-1.025.45-.625 0-1.075-.4Zm24.7 24.75L33.9 36q-.4-.45-.4-1.075t.45-1.025q.4-.45 1-.45t1.05.45l2.85 2.8q.45.45.425 1.075-.025.625-.425 1.075-.45.45-1.075.45t-1.075-.45ZM33.9 14.1q-.45-.45-.45-1.05 0-.6.45-1.05l2.8-2.85q.45-.45 1.075-.425.625.025 1.075.425.45.45.45 1.075t-.45 1.075L36 14.1q-.4.4-1.025.4-.625 0-1.075-.4ZM9.15 38.85q-.45-.45-.45-1.075t.45-1.075L12 33.9q.45-.45 1.05-.45.6 0 1.05.45.45.45.45 1.05 0 .6-.45 1.05l-2.8 2.85q-.45.45-1.075.425-.625-.025-1.075-.425ZM24 24Z"
+                  />
+                </svg>
+                Light</label
+              >
+            </fieldset>
+          </li>
+
+          <li>
+            <fieldset>
+              <input
+                type="radio"
+                class="hidden peer"
+                name="theme"
+                id="system"
+              />
+              <label
+                for="system"
+                class="flex items-center gap-2 w-full py-2 px-4 duration-300 text-sm whitespace-nowrap cursor-pointer hover:bg-slate-800/20 dark:hover:bg-gray-500/50 peer-checked:bg-body-dark peer-checked:text-white"
+                data-dropdown-button
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="system"
+                >
+                  <path
+                    d="M20 3H4c-1.103 0-2 .897-2 2v11c0 1.103.897 2 2 2h7v2H8v2h8v-2h-3v-2h7c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2zM4 14V5h16l.002 9H4z"
+                  ></path>
+                </svg>
+                system</label
+              >
+            </fieldset>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+      <!-- Hero Section -->
+      <div class="hero-bg">
+        <img src="assets/images/hypez.jpg" alt="Empowering Lyari" class="w-full h-auto object-contain block" />
+        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="absolute inset-0 z-10 flex flex-col items-center justify-center text-center text-white px-4">
+          <h1 class="text-2xl sm:text-4xl md:text-5xl font-bold mb-2 sm:mb-4 max-w-2xl font-hypez-hand uppercase text-white">
+            empowering the voices & hearts of lyari
+          </h1>
+          <p class="text-lg sm:text-lg md:text-xl font-hypez-2 max-w-xl">
+            from showcasing raw talent to standing together in time of need
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+
+      <!-- Section Title Panel -->
+      <div class="card-hypez-1 p-2 flex gap-1 items-center justify-between">
+        <h3 class="text-md leading-5 font-hypez-2 font-extrabold whitespace-nowrap">Rising Talents</h3>
+        <h3 class="text-sm font-hypez-1 flex-1 hidden md:block">-hypez- Award Winner 2025</h3>
+        <div class="flex gap-1">
+          <button id="prevBtn" class="rounded-full w-5 h-5 cursor-pointer swiper-button-prev-custom">
+            <svg xmlns="http://www.w3.org/2000/svg" height="20px" width="20px" viewBox="0 -960 960 960" fill="currentColor">
+              <path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z"/>
+            </svg>
+          </button>
+          <button id="nextBtn" class="rounded-full w-5 h-5 cursor-pointer swiper-button-next-custom">
+            <svg xmlns="http://www.w3.org/2000/svg" height="20px" width="20px" viewBox="0 -960 960 960" fill="currentColor">
+              <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Swiper Carousel -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper py-2">
+
+          <div class="swiper-slide card-hypez-1">
+            <img src="assets/images/music.jpg" alt="Music" />
+            <div class="p-2">
+              <h1 class="text-md font-extrabold mb-2">Music</h1>
+              <p class="font-hypez-1 text-sm">This is a short description inside the card footer.</p>
+            </div>
+          </div>
+
+          <div class="swiper-slide card-hypez-1">
+            <img src="assets/images/sports.jpg" alt="Sports" />
+            <div class="p-2">
+              <h1 class="text-md font-extrabold mb-2">Sports</h1>
+              <p class="font-hypez-1 text-sm">This is a short description inside the card footer.</p>
+            </div>
+          </div>
+
+          <div class="swiper-slide card-hypez-1">
+            <img src="assets/images/arts.jpg" alt="Arts" />
+            <div class="p-2">
+              <h1 class="text-md font-extrabold mb-2">Arts</h1>
+              <p class="font-hypez-1 text-sm">This is a short description inside the card footer.</p>
+            </div>
+          </div>
+
+          <div class="swiper-slide card-hypez-1">
+            <img src="assets/images/contents-creator.jpg" alt="Content Creators" />
+            <div class="p-2">
+              <h1 class="text-md font-extrabold mb-2">Contents Creators</h1>
+              <p class="font-hypez-1 text-sm">This is a short description inside the card footer.</p>
+            </div>
+          </div>
+
+          <div class="swiper-slide card-hypez-1">
+            <img src="assets/images/sports.jpg" alt="Sports" />
+            <div class="p-2">
+              <h1 class="text-md font-extrabold mb-2">Sports</h1>
+              <p class="font-hypez-1 text-sm">This is a short description inside the card footer.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </main>
+
+    <footer class="bg-red-500 text-white p-4 text-center">
+      footer
+    </footer>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
+  <script src="assets/js/JScript.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+@theme {
+  /* --- Custom Font Families --- */
+  --font-hypez-1: "Libertinus Serif", serif;
+  --font-hypez-2: "Courgette", cursive;
+  --font-hypez-3: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-hypez-hand: "Caveat", cursive;
+
+  /* --- Static Brand Color Tokens --- */
+  --color-primary: rgb(244, 67, 54);
+  --color-primary-alt: rgb(252, 81, 81);
+  --color-text-muted: rgb(108, 117, 125);
+  --color-text-inverted: rgb(255, 255, 255);
+
+  /* --- Base Page Background Tokens --- */
+  --color-light-bg: rgb(238, 228, 218);
+  --color-dark-bg: rgb(24, 20, 18);
+
+  /* --- Base Text Colors --- */
+  --color-text-base-dark: rgb(238, 232, 224);
+  --color-text-base-alt-dark: rgb(180, 168, 158);
+
+  /* --- Elevated Card Backgrounds --- */
+  --color-card-bg-light: rgb(255, 255, 255);
+  --color-card-bg-dark: rgb(42, 35, 31);
+
+  /* --- Dynamic Utility Mapping (Default: Light Mode) --- */
+  --color-text-base: rgb(34, 28, 25);
+  --color-text-base-alt: rgb(105, 90, 80);
+  --color-body: var(--color-light-bg);
+  --color-body-dark: var(--color-dark-bg);
+  --color-card-bg: var(--color-card-bg-light);
+
+}
